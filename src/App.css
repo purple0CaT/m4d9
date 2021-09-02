@@ -90,3 +90,14 @@ hr {
   border: unset;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.205);
 }
+
+.err-input {
+  border-radius: 20px;
+  border: 1px solid red;
+  background-color: rgba(128, 128, 128, 0.082);
+  text-align: center;
+  padding: 3px;
+  margin: 2px auto;
+  
+  width: 50%;
+}
