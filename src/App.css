@@ -15,10 +15,10 @@ h6 {
   color: white !important;
   text-shadow: 0 0 5px white;
 }
-#footer {
+footer {
     background-color: rgb(114, 114, 114);
     width: 100%;
-    margin: 0;
+    position: absolute !important;
 }
 
 .comments{

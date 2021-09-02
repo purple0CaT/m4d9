@@ -1,7 +1,7 @@
 import { Alert } from "react-bootstrap";
 import { useEffect, useState } from "react";
-const CustomAlert = ({kind}) => {
-    const [AlertType, setalertType] = useState({kind})
+const CustomAlert = ({type}) => {
+    const [AlertType, setalertType] = useState({type})
 
   return (
     <>

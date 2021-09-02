@@ -1,16 +1,48 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import MyNav from './components/MyNav';
-import MyFooter from './components/MyFooter';
-import MyJumbotron from './components/MyJumbotron';
-import Library from './components/Library'
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Layout from "./components/Layout";
+import Library from "./components/Library";
+import Register from "./components/Register";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import TestRegister from "./components/testRegister";
 function App() {
   return (
     <>
-    <MyNav />
-    <MyJumbotron />
-    <Library/>
-    <MyFooter />
+      <Router>
+        <Switch>
+          {/* Homes */}
+          <Route
+            path="/"
+            exact
+            render={(routerProps) => {
+              return (
+                <Layout>
+                  <Library {...routerProps} />
+                </Layout>
+              );
+            }}
+          />
+          {/* // Registration */}
+          <Route
+            path="/register"
+            exact
+            render={(routerProps) => {
+              return (
+                <Layout>
+                  <Register {...routerProps} />
+                  {/* <TestRegister /> */}
+                </Layout>
+              );
+            }}
+          />
+          {/* DEFAULT */}
+          <Route
+            render={() => (
+              <h1 className="text-danger text-center pt-5">404 - NOT FOUND</h1>
+            )}
+          />
+        </Switch>
+      </Router>
     </>
   );
 }
