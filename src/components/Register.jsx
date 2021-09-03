@@ -25,14 +25,14 @@ export default function Register() {
         .email("Invalid email address")
         .required("Invalid email address"),
       password: Yup.string()
-        .email("Invalid email address")
-        .required("Invalid email address"),
-      checkpassword: Yup.string()
-        .email("Invalid email address")
-        .required("Invalid email address"),
-    }),
+      .min(3, "Must be min 3 characters")
+      .required("Must be min 3 characters"),
+    checkpassword: Yup.string()
+      .min(3, "Must be min 3 characters")
+      .required("Must be min 3 characters"),
+  }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      alert(JSON.stringify(values, null, 2))
     },
   });
   //   Submitting
@@ -77,7 +77,9 @@ export default function Register() {
             value={formik.values.name}
           />
           {formik.touched.name && formik.errors.name ? (
-            <div className="err-input"><small>{formik.errors.name}</small></div>
+            <div className="err-input">
+              <small>{formik.errors.name}</small>
+            </div>
           ) : null}{" "}
         </Form.Group>
         <Form.Group controlId="surnameInput">
@@ -91,7 +93,9 @@ export default function Register() {
             value={formik.values.surname}
           />
           {formik.touched.surname && formik.errors.surname ? (
-            <div className="err-input"><small>{formik.errors.surname}</small></div>
+            <div className="err-input">
+              <small>{formik.errors.surname}</small>
+            </div>
           ) : null}{" "}
         </Form.Group>
         <Form.Group controlId="emailInput">
@@ -105,7 +109,9 @@ export default function Register() {
             value={formik.values.email}
           />
           {formik.touched.email && formik.errors.email ? (
-            <div className="err-input"><small>{formik.errors.email}</small></div>
+            <div className="err-input">
+              <small>{formik.errors.email}</small>
+            </div>
           ) : null}{" "}
         </Form.Group>
         <Form.Group controlId="passInput">
@@ -119,7 +125,9 @@ export default function Register() {
             value={formik.values.password}
           />
           {formik.touched.password && formik.errors.password ? (
-            <div className="err-input"><small>{formik.errors.password}</small></div>
+            <div className="err-input">
+              <small>{formik.errors.password}</small>
+            </div>
           ) : null}{" "}
         </Form.Group>
         <Form.Group controlId="passInputCheck">
@@ -133,7 +141,9 @@ export default function Register() {
             value={formik.values.checkpassword}
           />
           {formik.touched.checkpassword && formik.errors.checkpassword ? (
-            <div className="err-input"><small>{formik.errors.checkpassword}</small></div>
+            <div className="err-input">
+              <small>{formik.errors.checkpassword}</small>
+            </div>
           ) : null}{" "}
         </Form.Group>
         <hr />
